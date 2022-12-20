@@ -29,6 +29,8 @@
       </div>
     </div>
 
+    
+
     <div class="m">
       <div class="majt">
         <ul>
@@ -79,24 +81,27 @@
 
     <div class="cf2">
       <div class="container">
-        <form
-          class="login_form"
-          method="post"
-          name="form"
-          onsubmit="return validated()"
-        >
+        <form class="login_form" method="post" name="form">
           <div class="emri">Name</div>
-          <input type="text" />
+          <input type="text" name="name2" />
+          <div id="name_error">Please fill up your name</div>
 
           <div class="mbiemri">Surname</div>
-          <input type="text" />
+          <input required type="text" name="surname" />
+          <div id="surname_error">Please fill up your surname</div>
+
           <div class="font">Email or Phone</div>
-          <input autocomplete="off" type="text" name="email" />
+          <input autocomplete="off" type="email" name="email" />
           <div id="email_error">Please fill up your Email or Phone</div>
+
           <div class="font2">Please type your request</div>
           <input type="textbox" name="password" style="height: 80px" />
-          <div id="pass_error">Please fill up your Password</div>
-          <button type="submit">Submit</button>
+          <div id="pass_error">Please fill up your request</div>
+
+          <h3 id="success_message" style="display: none; color: green">
+            Your request is approved!
+          </h3>
+          <button type="button" onclick="validated()">Submit</button>
         </form>
       </div>
     </div>
@@ -159,5 +164,7 @@
         </ul>
       </div>
     </div>
+
+    <script src="valid.js"></script>
   </body>
 </html>
