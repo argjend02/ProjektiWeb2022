@@ -1,0 +1,618 @@
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+
+
+.header{
+ 
+
+  display: flex;
+  width: 100%;
+  background: #1c1c1c;
+  position: relative;
+justify-content: space-between;
+    text-align: center;
+  background-color: rgb(10, 7, 7);
+  border-bottom-width: 1px ;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(1, 1, 1);
+  padding: 15px 30px;
+}
+
+
+.left-section{
+  display: flex;
+  align-items: center;
+}
+
+.middle-section{
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 40px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.tech-logo{
+  height: 55px;
+  width: 100px;
+}
+
+.search-button{
+  height: 36px;
+  width: 66px;
+  background-color: rgb(248, 248, 248);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(193, 191, 191);
+  margin-left: -1px;
+  margin-right: 10px;
+}
+
+
+.search-bar{
+  flex: 1;
+  height: 36px;
+  padding-left: 10px;
+  background-color: white;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(193, 191, 191);
+  border-radius: 2px;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+  width: 0;
+
+}
+
+
+.search-bar::placeholder{
+  font-family: Roboto,Arial;
+  font-size: 16px;
+
+
+}
+
+
+.search-icon{
+  height: 25px;
+  margin-top: 4px;
+}
+
+
+.right-section ul{
+  color: white;
+  margin-right: 24px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+ 
+  
+}
+
+.right-section ul li{
+  padding: 10px;
+  padding-top: 18px;
+  margin-right: 5px;
+  
+}
+
+.right-section ul li a{
+  text-decoration: none;
+  color: white;
+}
+.right-section ul li a:hover{
+  text-decoration: none;
+  color: rgb(32, 30, 30);
+}
+
+.header2 ul{
+  height: 60px;
+  display: flex;
+  width: 100%;
+  background-color: rgb(188, 188, 201);
+  position: relative;
+  text-align: center;
+  justify-content: space-between;
+  padding: 30px;
+  align-self: center;
+ 
+
+}
+
+
+#elements ul{
+  color: white;
+  margin-right: 24px;
+  list-style: none;
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+
+}
+
+
+#elements ul li{
+
+
+  align-self: center;
+}
+
+
+#elements ul li a{
+  text-decoration: none;
+  color: rgb(4, 3, 3);
+  cursor: pointer;
+}
+#elements ul li a:hover{
+  color: #fff;
+}
+
+/*.foto img{
+  width: 100vw;
+  height: 100vh;
+
+}
+*/
+
+.footer1 ul{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: none;
+  align-self: center;
+}
+
+.ikonat ul{
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 0px;
+  align-self: center;
+
+}
+ .ikonat ul li{
+  list-style: none;
+  padding: 30px;
+  align-self: center;
+  cursor: pointer;
+}
+
+
+  .ikonat ul li:hover{
+    transform: scale(1.15);
+  }
+
+
+  .div1{
+    width: 24.6%;
+    height: 200px;
+    border-width: 1px;
+    border-color: #000;
+    border-style: solid;
+    float: left;
+
+    background-color: #f4f4f4;
+    color: rgb(144, 140, 140);
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+    
+  }
+
+ .div1 ul{
+  position: relative;
+  display: block;
+  margin: 10px;
+  align-self: center;
+  padding: 5px;
+
+}
+
+.div1 ul li{
+  position: relative;
+  justify-content: space-evenly;
+  align-self: center;
+  list-style: none;
+  padding: 5px;
+  cursor: pointer;
+}
+.div1 ul li a{
+  text-decoration: none;
+  color: rgb(135, 131, 131);
+  cursor: pointer;
+}
+.div1 ul li a:hover{
+  color: #fff;
+}
+
+
+/* 
+    prej ketu vazhdon about us kodi
+*/
+
+.main{
+  display: flex;
+}
+
+
+.main{
+  
+
+}
+
+  .main2{
+    display: flex;
+  }
+
+ .kutia2{
+ 
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  align-self: center;
+ 
+
+}
+
+.kutia2 {
+  background-image: url("lightblue.jpeg");
+  width: 720px;
+  height: 496px;
+  margin: 0 auto;
+ 
+
+}
+
+
+.kutia2 p{
+  text-align: center;
+  align-self: center;
+}
+
+
+  
+
+.kutia3{
+ 
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  align-self: center;
+ 
+
+}
+
+
+
+.kutia3 {
+  background-image: url("icons.jpeg");
+  
+ 
+  width: 720px;
+  height: 496px;
+  margin-bottom: 5px;
+
+}
+
+
+
+.kutia3 p{
+  text-align: center;
+  align-self: center;
+}
+
+
+.kutia4{
+    background-color: rgb(207, 231, 249);
+    display: flex;
+    /*
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    */
+    width: 720px;
+   height: 496px;
+  margin-bottom: 5px;
+
+  
+}
+
+.kutia4{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+
+.leftimg  {
+ 
+  
+}
+
+.rightimg{
+
+ 
+}
+
+
+/*
+.leftimg{
+  margin-top: 10px;
+}
+.leftimg ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+li{
+  list-style: none;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+*/
+
+
+
+
+
+/*    
+  prej ketu fillon css per contact file
+*/
+
+
+.main3{
+  display: flex;
+  
+}
+
+
+
+/* .djatht {
+  margin-top: 10%;
+  margin-bottom: 10%;
+
+  padding-left: 25%;
+  
+}
+*/
+.contact img{
+  width: 100vw;
+
+} 
+
+ .contact{
+  margin-top: 40px;
+ }
+.majt{
+  display: inline;
+  height: 20%;
+  background-color: black;
+  align-items: center;
+
+
+}
+
+.majt ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: center;
+}
+
+.majt ul li {
+  padding-top: 80px;
+  align-self: center;
+  list-style: none;
+
+}
+
+.m{
+
+height: 200px;
+align-items: center;
+align-self: center;
+}
+
+
+
+  
+  
+.g h1, h3{ 
+  
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+
+}
+
+
+
+
+.getintouch{
+
+}
+
+
+/* Login from te Contact */
+
+
+
+
+  .cf2{
+
+    display: flex;
+    justify-content: center;
+  }
+.container{
+  display: flex;
+	position: relative;
+	margin-top: 80px;
+	width: 450px;
+	height: auto;
+	background: none;
+	border-radius: 5px;
+
+
+}
+
+.login_form{
+	padding: 20px 40px;
+}
+.login_form .font{
+	font-size: 18px;
+	color: #130f40;
+	margin: 5px 0;
+}
+.login_form input{
+	height: 40px;
+	width: 350px;
+	padding: 0 5px;
+	font-size: 18px;
+	outline: none;
+	border: 1px solid silver;
+}
+.login_form .font2 {
+	margin-top: 30px;
+}
+
+
+.login_form button{
+	margin: 45px 0 30px 0;
+	height: 45px;
+	width: 365px;
+	font-size: 20px;
+	color: white;
+	outline: none;
+	cursor: pointer;
+	font-weight: bold;
+	background: #3a3c56;
+	border-radius: 10px;
+	border: none;
+	transition: .5s;
+}
+.login_form button:hover{
+	background: #151c6a;
+}
+.login_form #email_error,
+.login_form #name_error,
+.login_form #surname_error,
+.login_form #pass_error{
+	margin-top: 5px;
+	width: 345px;
+	font-size: 18px;
+	color: #C62828;
+	background: rgba(255,0,0,0.1);
+	text-align: center;
+	padding: 5px 8px;
+	border-radius: 3px;
+	border: 1px solid #EF9A9A;
+	display: none;
+}
+
+
+
+
+
+.team, .center{
+width: 100%;
+max-width: 1350px;
+margin: 0 auto;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+/* gap: 2rem; */
+text-align: center;
+margin-top: 100px;
+margin-bottom: 50px;
+
+}
+
+
+
+.ekipi img:hover{
+  transform: scale(1.2);
+}
+
+
+
+
+/* Slider per homepage*/
+
+
+
+
+  
+.slider {
+
+  width: 100%;
+  height: 88%;
+
+  overflow: hidden;
+}
+
+
+  .upperbutton{
+    height: 300px;
+  }
+.buttons {
+  width: 80%;
+  height: 50%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+
+.buttons label {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(23, 20, 20);
+  margin-bottom: 60px;
+ 
+}
+
+.buttons label:hover{
+  width: 52px;
+  height: 45px;
+  background-color: #7d7d87;
+  
+}
+
+
+
+.foto {
+  width: 400%;
+  height: 100%;
+  
+}
+
+ #photo {
+  width: 25%;
+  height: 100%;
+  transition: 1s;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+
+}
