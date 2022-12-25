@@ -27,14 +27,7 @@
           <li><a href="aboutus.html">About us</a></li>
           <li><a href="Contact.html">Contact</a></li>
           <li>
-            <!-- <a href="login.html">
-              <input
-                style="background-color: blue" 
-                type="button"
-                value="Log in"
-                placeholder="Login"
-              />
-            </a>  -->
+         
             <a href="login1.html">Log In</a>
           </li>
         </ul>
@@ -61,18 +54,18 @@
           <div class="input-group">
             <div class="input-field" id="nameField">
               <img id="foto" src="user.png " style="width: 30px" />
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" id="nameInput"/>
             </div>
 
             <div class="input-field">
               <img id="foto" src="mail.png" style="width: 30px" />
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" id="emailInput" />
               <div id="email_error">Please fill your Email</div>
             </div>
 
             <div class="input-field">
               <img id="foto" src="lock.png" style="width: 26px" />
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" id="passwordInput"/>
               <div id="email_error">Please fill your Password</div>
             </div>
             <p>Lost password <a href="#">Click here!</a></p>
@@ -92,21 +85,72 @@
       let signupbtn = document.getElementById("signupbtn");
       let signinbtn = document.getElementById("signinbtn");
       let nameField = document.getElementById("nameField");
+      let nameInput = document.getElementById("nameInput");
+      let emailInput = document.getElementById("emailInput");
+      let passwordInput = document.getElementById("passwordInput");
       let title = document.getElementById("title");
+      let isRegister = true;
+      let isSignin = false;
+
+      let users = {}
 
       signinbtn.onclick = function () {
         nameField.style.maxHeight = "0";
         title.innerHTML = "Log In";
         signupbtn.classList.add("disable");
         signinbtn.classList.remove("disable");
+
+        if(isSignin) {
+          if(!(emailInput.value in users)) alert("This account doesnt exists. Please register")
+          else {
+            if (users[emailInput.value] !== passwordInput.value) alert("Password incorrect, please try again")
+            else alert("Congratulations, you're logged in")
+          }
+        } else {
+          isSignin = true;
+          isRegister = false;
+        }
+
       };
 
       signupbtn.onclick = function () {
+        console.log('emailinPUT ', emailInput.value === "")
+        console.log('pass ', passwordInput.value === 'undefined')
+        console.log('isSignin', isSignin)
+        console.log('isRegister', isRegister)
+
+        console.log("Users ", users)
+        
         nameField.style.maxHeight = "60px";
         title.innerHTML = "Register";
         signupbtn.classList.remove("disable");
         signinbtn.classList.add("disable");
+
+        if (isRegister){
+          if (!ValidateEmail(emailInput.value)) alert("Wrong email format")
+          else if(emailInput.value in users) alert("A user with this email already exists")
+          else {
+            if (passwordInput.value === "") alert("Please add a password")
+            else {
+              users[emailInput.value]= passwordInput.value;
+            }
+          }
+        } else {
+          isRegister = true;
+          isSignin = false;
+        }
       };
+
+
+
+      const ValidateEmail = (email) => {
+          return String(email)
+            .toLowerCase()
+            .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+};
+
     </script>
 
 
