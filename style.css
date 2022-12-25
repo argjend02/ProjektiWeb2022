@@ -244,6 +244,15 @@ justify-content: space-between;
   display: flex;
 }
 
+.kutia1 {
+ 
+  width: 100%;
+ 
+ 
+
+}
+
+
 
 .main{
   
@@ -266,7 +275,7 @@ justify-content: space-between;
 
 .kutia2 {
   background-image: url("lightblue.jpeg");
-  width: 720px;
+  width: 100%;
   height: 496px;
   margin: 0 auto;
  
@@ -296,7 +305,7 @@ justify-content: space-between;
   background-image: url("icons.jpeg");
   
  
-  width: 720px;
+  width: 100%;
   height: 496px;
   margin-bottom: 5px;
 
@@ -319,7 +328,7 @@ justify-content: space-between;
     text-align: center;
     align-self: center;
     */
-    width: 720px;
+    width: 100%;
    height: 496px;
   margin-bottom: 5px;
 
