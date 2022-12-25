@@ -1,4 +1,5 @@
 //Validtion Code For Inputs
+// Validimi tek contact us
 
 var email = document.forms["form"]["email"];
 var password = document.forms["form"]["password"];
