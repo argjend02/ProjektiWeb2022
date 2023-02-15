@@ -43,6 +43,20 @@
               <img id="foto" src="user.png " style="width: 30px" />
               <input type="text" placeholder="Name" id="nameInput"/>
             </div>
+            
+            <div class="input-field" id="surnameField">
+              <img id="foto" src="user.png " style="width: 30px" />
+              <input type="text" placeholder="Suname" id="surnameInput"/>
+              <div id="email_error">Please fill your Surname</div>
+            </div>
+
+
+            <div class="input-field" id="dateField">
+              <img id="foto" src="kalendari.jpg " style="width: 20px"/>
+              <input type="date" placeholder="Ditelindja" id="dateInput"/>
+              <div id="email_error">Please fill Date of Birth</div>
+            </div>
+
 
             <div class="input-field">
               <img id="foto" src="mail.png" style="width: 30px" />
@@ -73,6 +87,8 @@
       let signinbtn = document.getElementById("signinbtn");
       let nameField = document.getElementById("nameField");
       let nameInput = document.getElementById("nameInput");
+      let surnameInput = document.getElementById("surnameInput");
+      let dateInput = document.getElementById("dateInput");
       let emailInput = document.getElementById("emailInput");
       let passwordInput = document.getElementById("passwordInput");
       let title = document.getElementById("title");
@@ -83,6 +99,8 @@
 
       signinbtn.onclick = function () {
         nameField.style.maxHeight = "0";
+        surnameField.style.maxHeight = "0";
+        dateField.style.maxHeight = "0";
         title.innerHTML = "Log In";
         signupbtn.classList.add("disable");
         signinbtn.classList.remove("disable");
@@ -101,6 +119,9 @@
       };
 
       signupbtn.onclick = function () {
+        console.log('surnameINPut', surnameInput.value ==="");
+        console.log('dateINPut', dateInput.value ==="");
+        console.log('emailinPUT ', emailInput.value === "")
         console.log('emailinPUT ', emailInput.value === "")
         console.log('pass ', passwordInput.value === 'undefined')
         console.log('isSignin', isSignin)
@@ -109,12 +130,18 @@
         console.log("Users ", users)
         
         nameField.style.maxHeight = "60px";
+        surnameField.style.maxHeight = "60px";
+        dateField.style.maxHeight = "60px";
         title.innerHTML = "Register";
         signupbtn.classList.remove("disable");
         signinbtn.classList.add("disable");
 
         if (isRegister){
+          if(!validateName(nameInput.value)) alert("Wrong name format")
+          if(!validateSurname(surnameInput.value)) alert("Wrong surnaname format")
+          if(!validateBirthdate(dateInput.value)) alert("Wrong date format")
           if (!ValidateEmail(emailInput.value)) alert("Wrong email format")
+          if(!validatePassword(passwordInput.value))alert("Wrong password format. It must contain an uppercase letter and be at least 8 characters.")
           else if(emailInput.value in users) alert("A user with this email already exists")
           else {
             if (passwordInput.value === "") alert("Please add a password")
@@ -128,7 +155,35 @@
         }
       };
 
+      function validateName(name) {
+  // The name should contain only letters and have a length of at least 2.
+  const nameRegex = /^[A-Za-z]{2,}$/;
+  return nameRegex.test(name);
+}
 
+function validateSurname(surname) {
+  // The surname should contain only letters and have a length of at least 2.
+  const surnameRegex = /^[A-Za-z]{2,}$/;
+  return surnameRegex.test(surname);
+}
+
+function validateBirthdate(birthdate) {
+  // The birthdate should be in the format YYYY-MM-DD and represent a date that is not in the future.
+  const birthdateRegex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!birthdateRegex.test(birthdate)) {
+    return false;
+  }
+  const birthdateObj = new Date(birthdate);
+  const now = new Date();
+  return birthdateObj.getTime() < now.getTime();
+}
+
+function validatePassword(password) {
+  // The password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  return passwordRegex.test(password);
+}
+      
 
       const ValidateEmail = (email) => {
           return String(email)
