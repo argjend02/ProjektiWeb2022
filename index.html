@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name = "viewport" content="width-device, initial-scale = 1.0">
+    <title>Tech Shop</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="height: 100vh; width: 100vw;">
+    <div class="header">
+      <div class="left-section">
+        <h1 style="color: white; margin-left: 10px">Tech-Shop</h1>
+        <img class="tech-logo" src="icons/techshoplogo.jpeg" />
+      </div>
+      <div class="middle-section">
+        <input class="search-bar" type="text" placeholder="Search" />
+        <button class="search-button">
+          <img class="search-icon" src="icons/search.svg" alt="" />
+        </button>
+      </div>
+      <div class="right-section">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="aboutus.html">About us</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li>
+            
+            <a href="login1.html">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header2">
+      <div id="elements">
+        <ul>
+          <li><a href="#">All Categories</a></li>
+          <li><a href="#">White Tech</a></li>
+          <li><a href="#">TV</a></li>
+          <li><a href="#">Laptops</a></li>
+          <li><a href="#">Consoles</a></li>
+          <li><a href="#">Smartphones</a></li>
+        </ul>
+      </div>
+    </div>
+    <main>
+      <div class="slider">
+        <div class="foto">
+          <img id="photo" src="mac8.jpeg" alt="" /> 
+          <img id="photo" src="pht3.jpeg" alt="" />
+           <img id="photo"src="ph5.jpeg" alt="" /> 
+           <img id="photo"src="pht7.jpeg" alt="" />
+        </div>
+      </div>
+
+      <div class="upperbutton">
+        <div class="buttons">
+          <label id="button1" onclick="showPht1()"></label>
+          <label  id ="button2"onclick="showPht2()"></label>
+          <label id= "button3"onclick="showPht3()"></label>
+          <label  id = "button4"onclick="showPht4()"></label>
+        </div>
+      </div>
+    </main>
+
+      <script>
+
+        var pht1 = document.getElementById("photo");
+        function showPht1(){
+          pht1.style.marginLeft = "0";
+        }
+
+        function showPht2(){
+          pht1.style.marginLeft = "-25%";
+
+        }
+
+         function showPht3(){
+          pht1.style.marginLeft = "-50%";
+
+        }
+
+
+         function showPht4(){
+          pht1.style.marginLeft = "-75%";
+
+        }
+
+          
+    </script>
+
+
+   
+      <div class="footer1">
+
+
+        <div class="div1">
+          <ul>
+            <li style="color: black; "> <strong> MEET TECH-SHOP </strong></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Employment</a></li>
+            <li><a href="#">Shops</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Merchant Information</a></li>
+      
+          </ul>
+        </div>
+
+
+        <div class="div1">
+          <ul>
+            <li style="color: black; "> <strong> ORDERING AND DELIVERY </strong></li>
+            <li><a href="#">Payment methods</a></li>
+            <li><a href="#">Delivery methods</a></li>
+            <li><a href="#">Frequently asked questions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          
+      
+          </ul>
+        </div>
+
+
+        <div class="div1">
+          <ul>
+            <li style="color: black; "> <strong> ONLINE SHOPPING </strong></li>
+            <li><a href="#">Instructions for online shopping</a></li>
+            <li><a href="#">Terms of online shopping</a></li>
+            <li><a href="#">Authorized services</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Legal entities</a></li>
+      
+          </ul>
+        </div>
+
+
+        <div class="div1">
+          <ul>
+            <li style="color: black; "> <strong> IN CENTRE OF ATTENTION</strong></li>
+            <li><a href="#">Collect in store</a></li>
+            <li><a href="#">Black Friday</a></li>
+            <li><a href="#">Home-Tech</a></li>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Blog</a></li>
+      
+          </ul>
+        </div>
+
+        <div class="ikonat">
+          <ul>
+            <li><img src="footer/visa.png" alt=""></li>
+            <li><img src="footer/appstore.png" alt="" /></li>
+            <li><img src="footer/googleplay.png" alt="" /></li>
+            <li><img src="footer/banca-intesa-min.png" alt="" /></li>
+            <li><img src="footer/mastercard-id-check-min.png" alt="" /></li>
+            <li><img src="footer/nlb-komercijalna-min.png" alt="" /></li>
+            <li style="color: grey; font-size: small;" >Tech-Shop 2022 all rights reserved </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
