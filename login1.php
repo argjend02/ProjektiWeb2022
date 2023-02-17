@@ -13,7 +13,7 @@
     <div class="header">
       <div class="left-section">
         <h1 style="color: white; margin-left: 10px">Tech-Shop</h1>
-        <img class="tech-logo" src="icons/techshoplogo.jpeg" />
+        <img class="tech-logo" src="img/shopping-cart.png" />
       </div>
       <div class="middle-section">
         <input class="search-bar" type="text" placeholder="Search" />
@@ -33,46 +33,54 @@
         </ul>
       </div>
     </div>
-
+    
     <div class="container">
-      <div class="form-box">
+      <div class="form-box" id = 'formbox'>
         <h1 id="title">Register</h1>
-        <form>
+        <?php
+          include 'php/model.php';
+          $model = new Model();
+          $insert = $model->register();
+          echo "<script>alert('works')</script>"
+        ?>
+        <form method="post" id="form">
           <div class="input-group">
             <div class="input-field" id="nameField">
               <img id="foto" src="user.png " style="width: 30px" />
-              <input type="text" placeholder="Name" id="nameInput"/>
+              <input type="text" name="name" placeholder="Name" id="nameInput"/>
             </div>
-            
+
+
             <div class="input-field" id="surnameField">
               <img id="foto" src="user.png " style="width: 30px" />
-              <input type="text" placeholder="Suname" id="surnameInput"/>
+              <input type="text" name="surname" placeholder="Surname" id="surnameInput"/>
               <div id="email_error">Please fill your Surname</div>
             </div>
 
 
             <div class="input-field" id="dateField">
-              <img id="foto" src="kalendari.jpg " style="width: 20px"/>
-              <input type="date" placeholder="Ditelindja" id="dateInput"/>
+              <img id="foto" src="kalendari.jpg " style="width: 20px; margin-left: 5px;"/>
+              <input type="date" name="birthdate" placeholder="Ditelindja" id="dateInput" />
               <div id="email_error">Please fill Date of Birth</div>
             </div>
 
-
             <div class="input-field">
               <img id="foto" src="mail.png" style="width: 30px" />
-              <input type="email" placeholder="Email" id="emailInput" />
+              <input type="email" name="email" placeholder="Email" id="emailInput" />
               <div id="email_error">Please fill your Email</div>
             </div>
 
             <div class="input-field">
               <img id="foto" src="lock.png" style="width: 26px" />
-              <input type="password" placeholder="Password" id="passwordInput"/>
+              <input type="password" name="password" placeholder="Password" id="passwordInput"/>
               <div id="email_error">Please fill your Password</div>
             </div>
             <p>Lost password <a href="#">Click here!</a></p>
           </div>
 
-          <div class="btn-field">
+          <input type="text" id="type" class="invisible" name="type" value="singUp">
+
+          <div class="btn-field" id = 'btn'>
             <button type="button" id="signupbtn">Register</button>
             <button type="button" id="signinbtn" class="disable">
               Log In
@@ -85,13 +93,15 @@
     <script>
       let signupbtn = document.getElementById("signupbtn");
       let signinbtn = document.getElementById("signinbtn");
-      let nameField = document.getElementById("nameField");
+      let dateField = document.getElementById("dateField");
       let nameInput = document.getElementById("nameInput");
       let surnameInput = document.getElementById("surnameInput");
       let dateInput = document.getElementById("dateInput");
       let emailInput = document.getElementById("emailInput");
       let passwordInput = document.getElementById("passwordInput");
       let title = document.getElementById("title");
+      let type = document.getElementById("type");
+
       let isRegister = true;
       let isSignin = false;
 
@@ -106,10 +116,15 @@
         signinbtn.classList.remove("disable");
 
         if(isSignin) {
-          if(!(emailInput.value in users)) alert("This account doesnt exists. Please register")
+          if(!signinbtn.classList.contains('disable')) { 
+            type.value = "signIn"
+            signinbtn.type = "submit"
+            signinbtn.click()
+          }
+          if(!(emailInput.value in users)) alert("This account doesnt exist. Please register!")
           else {
-            if (users[emailInput.value] !== passwordInput.value) alert("Password incorrect, please try again")
-            else alert("Congratulations, you're logged in")
+            if (users[emailInput.value] !== passwordInput.value) alert("Password is incorrect, please try again!")
+            else window.location.href = "index.html"
           }
         } else {
           isSignin = true;
@@ -119,9 +134,10 @@
       };
 
       signupbtn.onclick = function () {
+
+        console.log('nameINPut', nameInput.value ==="");
         console.log('surnameINPut', surnameInput.value ==="");
         console.log('dateINPut', dateInput.value ==="");
-        console.log('emailinPUT ', emailInput.value === "")
         console.log('emailinPUT ', emailInput.value === "")
         console.log('pass ', passwordInput.value === 'undefined')
         console.log('isSignin', isSignin)
@@ -135,17 +151,24 @@
         title.innerHTML = "Register";
         signupbtn.classList.remove("disable");
         signinbtn.classList.add("disable");
+        
 
         if (isRegister){
-          if(!validateName(nameInput.value)) alert("Wrong name format")
-          if(!validateSurname(surnameInput.value)) alert("Wrong surnaname format")
-          if(!validateBirthdate(dateInput.value)) alert("Wrong date format")
-          if (!ValidateEmail(emailInput.value)) alert("Wrong email format")
-          if(!validatePassword(passwordInput.value))alert("Wrong password format. It must contain an uppercase letter and be at least 8 characters.")
-          else if(emailInput.value in users) alert("A user with this email already exists")
+          // if(!validateName(nameInput.value)) alert("Wrong name format")
+          // if(!validateSurname(surnameInput.value)) alert("Wrong surnaname format")
+          // if(!validateBirthdate(dateInput.value)) alert("Wrong date format")
+          // if (!ValidateEmail(emailInput.value)) alert("Wrong email format")
+          // if(!validatePassword(passwordInput.value))alert("Wrong password format. It must contain an uppercase letter and be at least 8 characters.")
+          // else if(emailInput.value in users) alert("A user with this email already exists")
+          if(false){}
           else {
             if (passwordInput.value === "") alert("Please add a password")
             else {
+              if(!signupbtn.classList.contains('disable')) { 
+                type.value = "signUp"
+                signupbtn.type = "submit"
+                signupbtn.click();
+              }
               users[emailInput.value]= passwordInput.value;
             }
           }
@@ -154,7 +177,6 @@
           isSignin = false;
         }
       };
-
       function validateName(name) {
   // The name should contain only letters and have a length of at least 2.
   const nameRegex = /^[A-Za-z]{2,}$/;
@@ -184,6 +206,8 @@ function validatePassword(password) {
   return passwordRegex.test(password);
 }
       
+
+document.getElementById('dateInput').setAttribute('max', new Date().toISOString().split("T")[0])
 
       const ValidateEmail = (email) => {
           return String(email)
