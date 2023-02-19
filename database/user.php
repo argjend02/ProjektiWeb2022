@@ -41,11 +41,10 @@ class User
             $query = "INSERT INTO users(name, surname, birthdate, email, password) VALUES ('$name','$surname', '$birthdate', '$email', '$password')";
             if ($this->conn->query($query)) {
                 setcookie('user', json_encode($userData), time() + (86400 * 30), "/");
-                echo "<script>alert('User registered successfully')</script>";
+                echo "<script>window.location.href = 'index.php';</script>";
             } else {
                 echo "<script>alert('Registration failed. Please try again.')</script>";
             }
-            echo "<script>window.location.href = 'index.php';</script>";
         } else if ($type === "signIn") {
             if (!$userData) {
                 echo "<script>alert('User with this email doesn\'t exist')</script>";
@@ -91,12 +90,15 @@ class User
         }
     }
 
-    public function edit($id)
+    public function getLoggedInUser()
     {
-
+        $user = json_decode($_COOKIE['user']);
+        if (!isset($_COOKIE['user'])) {
+            echo "<script>alert('You are not authorized to perform this action')</script>";
+            return;
+        }
         $data = null;
-
-        $query = "SELECT * FROM users WHERE id = '$id'";
+        $query = "SELECT * FROM users WHERE id = '$user->id'";
         if ($sql = $this->conn->query($query)) {
             while ($row = $sql->fetch_assoc()) {
                 $data = $row;
@@ -105,15 +107,23 @@ class User
         return $data;
     }
 
-    public function update($data)
+    public function update()
     {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return;
+        }
 
-        $query = "UPDATE users SET name='$data[name]', email='$data[email]', mobile='$data[mobile]', address='$data[address]' WHERE id='$data[id] '";
-
-        if ($sql = $this->conn->query($query)) {
-            return true;
+        $user = json_decode($_COOKIE['user']);
+        if (!isset($_COOKIE['user']) || $user->id !== $_POST['id']) {
+            echo "<script>alert('You are not authorized to perform this action')</script>";
+            return;
+        }
+        $query = "UPDATE users SET name='$_POST[name]', surname='$_POST[surname]', birthdate='$_POST[birthdate]' WHERE id='$_POST[id] '";
+        if ($this->conn->query($query)) {
+            echo "<script>alert('Your information is updated successfully')</script>";
+            header("Location: myInfo.php");
         } else {
-            return false;
+            echo "<script>alert('Updating information is not successful')</script>";
         }
     }
 }

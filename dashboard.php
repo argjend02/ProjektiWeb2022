@@ -36,10 +36,6 @@
             <button type="submit">Post Product</button>
         </form>
     </div>
-
-    ?>
-
-
 </body>
 
 </html>
