@@ -23,20 +23,33 @@ body{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: flex-start;
+	/* justify-content: flex-start; */
 }
 
 .product-image{
-	max-height: 270px;
+	max-height: 250px;
+	z-index: 1;
+}
+
+.product-info{
+	position: relative;
+	background-color: white;	
+	z-index: 10;
+}
+
+.product-image image {
+	background-color: aqua;
+	object-fit: cover;
 }
 
 .container1 .card1{
-	width: 23%;
-	margin: 15px auto 15px 0;
+	min-width: 200px;
+	margin: 15px 10px 15px 10px;
 	text-align: center;
 	overflow: hidden;
 	border: 2px solid crimson;
 	border-radius: 15px;
+	
 	box-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
 }
 

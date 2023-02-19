@@ -153,7 +153,7 @@
     };
     function validateName(name) {
       // The name should contain only letters and have a length of at least 2.
-      const nameRegex = /^[A-Za-z]{2,}$/;
+      const nameRegex = /.*[a-zA-Z].*[a-zA-Z].*/;
       return nameRegex.test(name);
     }
 

@@ -40,6 +40,7 @@ class User
             }
             $query = "INSERT INTO users(name, surname, birthdate, email, password) VALUES ('$name','$surname', '$birthdate', '$email', '$password')";
             if ($this->conn->query($query)) {
+                setcookie('user', json_encode($userData), time() + (86400 * 30), "/");
                 echo "<script>alert('User registered successfully')</script>";
             } else {
                 echo "<script>alert('Registration failed. Please try again.')</script>";
@@ -51,16 +52,15 @@ class User
                 return;
             }
             if ($userData['email'] == $email && $userData['password'] == $password) {
-                $_SESSION["isLoggedIn"] = true;
                 setcookie('user', json_encode($userData), time() + (86400 * 30), "/");
-                echo "<script>alert('Logged in');window.location.href = 'index.php';</script>";
+                echo "<script>window.location.href = 'index.php';</script>";
             } else {
                 echo "<script>alert('Incorrect credentials')</script>";
             }
         }
     }
 
-    public function fetch()
+    public function getAllUsers()
     {
         $data = null;
         $query = "SELECT * FROM users";
@@ -72,14 +72,22 @@ class User
         return $data;
     }
 
-    public function delete($id)
+    public function delete()
     {
-
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return;
+        }
+        $user = json_decode($_COOKIE['user']);
+        if (!isset($_COOKIE['user']) || !$user->isAdmin) {
+            echo "<script>alert('You are not authorized to perform this action')</script>";
+            return;
+        }
+        $id = $_POST['id'];
         $query = "DELETE FROM users where id = '$id'";
         if ($sql = $this->conn->query($query)) {
-            return true;
+            header("Location: admin.php");
         } else {
-            return false;
+            echo "<script>alert('User deletion unsucessful')</script>";
         }
     }
 

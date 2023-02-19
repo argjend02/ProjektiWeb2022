@@ -10,7 +10,8 @@ class Product
     public function __construct()
     {
         try {
-            $this->conn = new mysqli($this->server, $this->username, $this->password, $this->database);
+            $this->conn = new PDO("mysql:host=$this->server;dbname=$this->database", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $ex) {
             echo 'connection failed' . $ex->getMessage();
         }
@@ -21,25 +22,33 @@ class Product
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             return;
         }
+        if (!isset($_COOKIE['user'])) {
+            echo "<script>alert('You are not logged in')</script>";
+            return;
+        }
 
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
 
+
         $target_dir = "uploads/"; // specify the directory where you want to save the image
         $target_file = $target_dir . basename($_FILES["image"]["name"]); // get the path of the file
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); // get the file extension
 
-        $sql = "INSERT INTO products(name, description, price, image) VALUES (?,?,?,?)";
+        $user = json_decode($_COOKIE["user"]);
+        $image = $_FILES["image"]["name"];
+        $user_id = $user->id;
+
+        $sql = "INSERT INTO products(name, description, price, image, user_id) VALUES (:name, :description, :price, :image, :user_id)";
         $query = $this->conn->prepare($sql);
+        $query->bindParam(':name', $name);
+        $query->bindParam(':description', $description);
+        $query->bindParam(':price', $price);
+        $query->bindParam(':image', $image);
+        $query->bindParam(':user_id', $user_id);
 
         $uploadOk = true;
-
-        // Check if file already exists
-        // if (file_exists($target_file)) {
-        //     echo "<script>alert('Sorry, file already exists.')</script>";
-        //     $uploadOk = false;
-        // }
 
         // Check file size
         if ($_FILES["image"]["size"] > 500000) {
@@ -60,8 +69,8 @@ class Product
             echo "<script>alert('Sorry, your file was not uploaded.</script>";
             // if everything is ok, try to upload file
         } else {
-            if ($query->execute([$name, $description, $price, $_FILES["image"]["name"]]) && move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                // TODO: add a my posts page to redirect to?
+
+            if ($query->execute() && move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
                 echo "<script>alert('The file " . basename($_FILES["image"]["name"]) . " has been uploaded.'); window.location.href = 'products.php';</script>";
             } else {
                 echo "<script>alert('Sorry, there was an error uploading your file.')</script>";
@@ -72,12 +81,11 @@ class Product
     public function getProducts()
     {
         $sql = "SELECT * FROM products";
-        $result = $this->conn->query($sql);
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
         $products = array();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $products[] = $row;
-            }
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $products[] = $row;
         }
         return $products;
     }

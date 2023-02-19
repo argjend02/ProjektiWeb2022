@@ -1,5 +1,5 @@
 <?php
-session_start();
-$_SESSION["isLoggedIn"] = false;
+unset($_COOKIE['user']);
+setcookie("user", "", time() - 3600, '/');
 header('Location: login1.php');
 ?>

@@ -14,21 +14,27 @@
             <li><a href="index.php">Home</a></li>
             <li><a href="aboutus.php">About us</a></li>
             <li><a href="Contact.php">Contact</a></li>
-            <li>
-                <select onChange="redirect(this.value)">
-                    <option value="">Select an option</option>
-                    <option value="dashboard.php">Post a product</option>
-                    <option value="2"><a>User info</a></option>
-                </select>
-            </li>
-            <?php
-            session_start();
-            if (!isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn'] === false) {
-                echo "<li><a href='login1.php'>Log In</a></li>";
-            } else {
-                echo "<li><a href='logout.php'>Log Out</a></li>";
-            }
-            ?>
+
+            <?php if (isset($_COOKIE['user'])): ?>
+                <li>
+                    <select onChange='redirect(this.value)'>
+                        <option value=''>Select an option</option>
+                        <option value='dashboard.php'>Post a product</option>
+                        <option value='myInfo.php'><a>User info</a></option>
+                        <?php
+                        $user = json_decode($_COOKIE["user"]);
+                        if ($user->isAdmin):
+                            ?>
+                            <option value='admin.php'><a>Admin panel</a></option>
+                        <?php endif; ?>>
+                    </select>
+                </li>
+                <li>
+                    <a href='logout.php'>Log Out</a>
+                </li>
+            <?php else: ?>
+                <li><a href='login1.php'>Log In</a></li>
+            <?php endif; ?>
 
             <!-- <li>
                 <form action="dashboard.php" method="get">
