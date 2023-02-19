@@ -13,10 +13,12 @@
     $model = new Product();
     $model->addProduct();
     ?>
+    <?php include 'header.php';
+    ?>
     <div class="dashboard">
         <form action="#" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="name">Name:</label>
+                <label for="name">Name of the product:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
@@ -34,6 +36,10 @@
             <button type="submit">Post Product</button>
         </form>
     </div>
+
+    ?>
+
+
 </body>
 
 </html>

@@ -774,14 +774,15 @@ height: 100%;
 
 .dashboard {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto ;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .form-group {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .form-group label {
@@ -801,11 +802,11 @@ height: 100%;
   margin-bottom: 20px;
 }
 
-.dashboard-button {
+.dashboard button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #15142c;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -813,4 +814,31 @@ height: 100%;
 
 button[type="submit"]:hover {
   background-color: #3e8e41;
+}
+
+
+select{
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #000;
+  border-color: white;
+  color: #ccc;
+}
+
+select option{
+  padding: 10px 20px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background-color: white;
+  color: #000;
+  white-space: pre-wrap;
+  cursor: pointer;
+}
+select option:hover{
+  background-color: rgb(255, 254, 254);
+}
+select option:checked{
+  box-shadow: 0 0 10px 100px #595959 inset;
 }
