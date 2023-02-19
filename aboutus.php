@@ -10,7 +10,7 @@
   <?php include('header.php') ?>
   <div class="main">
     <div class="kutia1">
-      <img style="width: 100%; height: 500px" src="main3.jpeg" alt="" />
+      <img style="width: 100%; height: 500px" src="fotot/main3.jpeg" alt="" />
     </div>
     <div class="kutia2">
       <p>
@@ -47,14 +47,14 @@
     <div class="kutia4">
       <div class="upperpart">
         <div class="leftimg">
-          <img style="width: 100px" src="sh1.png" alt="" />
+          <img style="width: 100px" src="fotot/sh1.png" alt="" />
 
           <p>350</p>
           <p>Packaging everyday</p>
         </div>
 
         <div class="rightimg">
-          <img style="width: 100px" src="puntort.png" alt="" />
+          <img style="width: 100px" src="fotot/puntort.png" alt="" />
 
           <p>80000</p>
           <p>Visitors to facilities per month</p>
@@ -62,13 +62,13 @@
       </div>
       <div class="bottomleft">
         <div>
-          <img style="width: 100px" src="service.png" alt="" />
+          <img style="width: 100px" src="fotot/service.png" alt="" />
           <br />
           <p>24/7</p>
           <p>Service Assistant online</p>
         </div>
         <div class="bottomright">
-          <img style="width: 100px" src="kartolin.png" alt="" />
+          <img style="width: 100px" src="fotot/kartolin.png" alt="" />
           <br />
           <p>1000</p>
           <p>Incoming mails per week</p>
@@ -83,45 +83,47 @@
 
   <div class="team">
     <div class="ekipi">
-      <img src="employer1.jpg" alt="" style="width: 250px" />
+      <img src="fotot/employer1.jpg" alt="" style="width: 250px" />
       <h3>Albin Shabani</h3>
       <h5>Creative Leader</h5>
 
       <div class="ikonat">
-        <a href="#"><img src="twitter.png" alt="" style="width: 30px" /></a>
-        <a href="https://www.facebook.com/albin010?mibextid=LQQJ4d"><img src="fb.png " style="width: 30px" alt="" /></a>
+        <a href="#"><img src="fotot/twitter.png" alt="" style="width: 30px" /></a>
+        <a href="https://www.facebook.com/albin010?mibextid=LQQJ4d"><img src="fotot/fb.png " style="width: 30px"
+            alt="" /></a>
         <a
           href="https://www.instagram.com/albinshabani_/?igshid=YmMyMTA2M2Y%3D&fbclid=IwAR3YFPj6HCrgXVE87WQEu4KcpZl4Y3pFU_ZlOwdfIajc04jzgRptgkk_0h8"><img
-            src="instagram.png" alt="" style="width: 30px" /></a>
+            src="fotot/instagram.png" alt="" style="width: 30px" /></a>
       </div>
     </div>
 
     <div class="ekipi">
-      <img src="employer2.jpg" alt="" style="width: 250px" />
+      <img src="fotot/employer2.jpg" alt="" style="width: 250px" />
       <h3>Greta Ahma</h3>
       <h5>Programming Guru</h5>
 
       <div class="ikonat">
-        <a href="#"><img src="twitter.png" alt="" style="width: 30px" /></a>
-        <a href="https://www.facebook.com/albin010?mibextid=LQQJ4d"><img src="fb.png " style="width: 30px" alt="" /></a>
+        <a href="#"><img src="fotot/twitter.png" alt="" style="width: 30px" /></a>
+        <a href="https://www.facebook.com/albin010?mibextid=LQQJ4d"><img src="fotot/fb.png " style="width: 30px"
+            alt="" /></a>
         <a
           href="https://www.instagram.com/albinshabani_/?igshid=YmMyMTA2M2Y%3D&fbclid=IwAR3YFPj6HCrgXVE87WQEu4KcpZl4Y3pFU_ZlOwdfIajc04jzgRptgkk_0h8"><img
-            src="instagram.png" alt="" style="width: 30px" /></a>
+            src="fotot/instagram.png" alt="" style="width: 30px" /></a>
       </div>
     </div>
 
     <div class="ekipi">
-      <img src="employer3.jpg" alt="" style="width: 250px" />
+      <img src="fotot/employer3.jpg" alt="" style="width: 250px" />
       <h3>Argjend Azizi</h3>
       <h5>Web Developer</h5>
 
       <div class="iconss">
-        <a href="#"><img src="twitter.png" alt="" style="width: 30px" /></a>
-        <a href="https://www.facebook.com/argjendi.azizi?mibextid=LQQJ4d"><img src="fb.png " style="width: 30px"
+        <a href="#"><img src="fotot/twitter.png" alt="" style="width: 30px" /></a>
+        <a href="https://www.facebook.com/argjendi.azizi?mibextid=LQQJ4d"><img src="fotot/fb.png " style="width: 30px"
             alt="" /></a>
         <a
           href="https://www.instagram.com/argjendazizzi/?igshid=YWJhMjlhZTc%3D&fbclid=IwAR0aSzIvf5LD3s0b8lS1asy7nQwAzNzLPPsauD0aNUZ_09eZTkmGtPLZ5_4"><img
-            src="instagram.png" alt="" style="width: 30px" /></a>
+            src="fotot/instagram.png" alt="" style="width: 30px" /></a>
       </div>
     </div>
   </div>

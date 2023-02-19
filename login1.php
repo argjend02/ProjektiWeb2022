@@ -17,39 +17,39 @@
     <div class="form-box" id='formbox'>
       <h1 id="title">Register</h1>
       <?php
-      include 'php/model.php';
-      $model = new Model();
-      $insert = $model->loginOrRegister();
+      include 'database/user.php';
+      $model = new User();
+      $model->loginOrRegister();
       ?>
       <form method="post" id="form">
         <div class="input-group">
           <div class="input-field" id="nameField">
-            <img id="foto" src="user.png " style="width: 30px" />
+            <img id="foto" src="fotot/user.png " style="width: 30px" />
             <input type="text" name="name" placeholder="Name" id="nameInput" />
           </div>
 
 
           <div class="input-field" id="surnameField">
-            <img id="foto" src="user.png " style="width: 30px" />
+            <img id="foto" src="fotot/user.png " style="width: 30px" />
             <input type="text" name="surname" placeholder="Surname" id="surnameInput" />
             <div id="email_error">Please fill your Surname</div>
           </div>
 
 
           <div class="input-field" id="dateField">
-            <img id="foto" src="kalendari.jpg " style="width: 20px; margin-left: 5px;" />
+            <img id="foto" src="fotot/kalendari.jpg " style="width: 20px; margin-left: 5px;" />
             <input type="date" name="birthdate" placeholder="Ditelindja" id="dateInput" />
             <div id="email_error">Please fill Date of Birth</div>
           </div>
 
           <div class="input-field">
-            <img id="foto" src="mail.png" style="width: 30px" />
+            <img id="foto" src="fotot/mail.png" style="width: 30px" />
             <input type="email" name="email" placeholder="Email" id="emailInput" />
             <div id="email_error">Please fill your Email</div>
           </div>
 
           <div class="input-field">
-            <img id="foto" src="lock.png" style="width: 26px" />
+            <img id="foto" src="fotot/lock.png" style="width: 26px" />
             <input type="password" name="password" placeholder="Password" id="passwordInput" />
             <div id="email_error">Please fill your Password</div>
           </div>
@@ -128,12 +128,12 @@
 
 
       if (isRegister) {
-        if(!validateName(nameInput.value)) alert("Wrong name format")
-        if(!validateSurname(surnameInput.value)) alert("Wrong surnaname format")
-        if(!validateBirthdate(dateInput.value)) alert("Wrong date format")
+        if (!validateName(nameInput.value)) alert("Wrong name format")
+        if (!validateSurname(surnameInput.value)) alert("Wrong surnaname format")
+        if (!validateBirthdate(dateInput.value)) alert("Wrong date format")
         if (!ValidateEmail(emailInput.value)) alert("Wrong email format")
-        if(!validatePassword(passwordInput.value))alert("Wrong password format. It must contain an uppercase letter and be at least 8 characters.")
-        else if(emailInput.value in users) alert("A user with this email already exists")
+        if (!validatePassword(passwordInput.value)) alert("Wrong password format. It must contain an uppercase letter and be at least 8 characters.")
+        else if (emailInput.value in users) alert("A user with this email already exists")
         if (false) { }
         else {
           if (passwordInput.value === "") alert("Please add a password")
@@ -176,10 +176,9 @@
 
     function validatePassword(password) {
       // The password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
       return passwordRegex.test(password);
     }
-
 
     document.getElementById('dateInput').setAttribute('max', new Date().toISOString().split("T")[0])
 
