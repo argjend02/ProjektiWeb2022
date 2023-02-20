@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" name="description" required></textarea>
+                <textarea id="description" style="max-height:100px;" name="description" required></textarea>
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>
@@ -36,6 +36,8 @@
             <button type="submit">Post Product</button>
         </form>
     </div>
+    <?php include 'footer.php';
+    ?>
 </body>
 
 </html>

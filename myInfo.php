@@ -10,10 +10,10 @@
             background-color: #f2f2f2;
         }
 
-        h1 {
-            text-align: center;
+        /* h1 {
+           
             margin-top: 20px;
-        }
+        } */
 
         form {
             width: 50%;
@@ -66,7 +66,7 @@
     $user = $model->getLoggedInUser();
     $model->update();
     ?>
-    <h1>Edit Your info</h1>
+    <h1 style=" text-align: center; margin-top:50px;">Edit Your info</h1>
     <form class="edit-user" method="post">
         <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
 

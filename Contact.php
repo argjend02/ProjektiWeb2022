@@ -43,7 +43,7 @@
 
   <div class="main3">
     <div class="contact">
-      <img src="fotot/maps1_.png" alt="" />
+      <img src="fotot/maps1_.png" alt="" style="width:100%" />
     </div>
   </div>
 

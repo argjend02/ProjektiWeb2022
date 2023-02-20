@@ -6,10 +6,39 @@
   <title>Tech Shop</title>
 
   <link rel="stylesheet" href="style.css" />
+  <!-- <style>
+    .slider2 {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .foto2 {
+      display: flex;
+      width: 200%;
+      animation: slide 7s linear infinite;
+    }
+
+    .foto2 img {
+      width: 25%;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style> -->
+
 </head>
+<?php include "header.php"; ?>
 
 <body style="height: 100vh; width: 100vw;">
-  <?php include('header.php') ?>
+
   <div class="header2">
     <div id="elements">
       <ul>
@@ -23,6 +52,16 @@
     </div>
   </div>
   <main>
+    <!-- <div class="slider2">
+      <div class="foto2">
+        <img src="ps555.jpg" alt="" />
+        <img src="nintendo.jpeg" alt="" />
+        <img src="laptoppp.jpeg" alt="" />
+        <img src="ps555.jpg" alt="" />
+        <img src="nintendo.jpeg" alt="" />
+        <img src="ps555.jpg" alt="" />
+      </div>
+    </div> -->
     <div class="slider">
       <div class="foto">
         <img id="photo" src="fotot/mac8.jpeg" alt="" />
@@ -40,10 +79,27 @@
         <label id="button4" onclick="showPht4()"></label>
       </div>
     </div>
+
   </main>
 
-  <?php include('footer.php') ?>
+  <!-- <main>
+    <div class="slider">
+      <div class="foto">
+        <img id="photo1" src="fotot/mac8.jpeg" alt="" />
+        <img id="photo2" src="fotot/pht3.jpeg" alt="" />
+        <img id="photo3" src="fotot/ph5.jpeg" alt="" />
+        <img id="photo4" src="fotot/pht7.jpeg" alt="" />
+      </div>
+      <div class="buttons">
+        <label for="photo1"></label>
+        <label for="photo2"></label>
+        <label for="photo3"></label>
+        <label for="photo4"></label>
+      </div>
+    </div>
+  </main> -->
 
+  <?php include "footer.php"; ?>
   <script>
 
     var pht1 = document.getElementById("photo");

@@ -10,13 +10,16 @@
 
   <style>
     table {
+
       border-collapse: collapse;
-      width: 100%;
+      width: 90%;
+      margin-left: 75px;
+      margin-top: 50px;
     }
 
     th,
     td {
-      text-align: left;
+      text-align: center;
       padding: 8px;
       border: 1px solid #ddd;
     }
