@@ -31,7 +31,7 @@
     text-align: center;
   
   }
-  
+   
   
   .form-box h1{
     font-size: 30px;
@@ -68,7 +68,7 @@
     
   
   }
-  
+ 
   input{
     width: 100%;
     background: transparent;
@@ -76,7 +76,7 @@
     outline: 0;
     padding: 18px 15px;
   
-  }
+  } 
 
   .invisible{
     display: none;
@@ -98,7 +98,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 80px;
-  }
+  } 
   
   .btn-field button {
     flex-basis: 48%;
