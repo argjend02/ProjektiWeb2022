@@ -101,19 +101,19 @@ class Product
         }
     }
 
-    public function edit($id)
-    {
+    // public function edit($id)
+    // {
 
-        $data = null;
+    //     $data = null;
 
-        $query = "SELECT * FROM users WHERE id = '$id'";
-        if ($sql = $this->conn->query($query)) {
-            while ($row = $sql->fetch_assoc()) {
-                $data = $row;
-            }
-        }
-        return $data;
-    }
+    //     $query = "SELECT * FROM users WHERE id = '$id'";
+    //     if ($sql = $this->conn->query($query)) {
+    //         while ($row = $sql->fetch_assoc()) {
+    //             $data = $row;
+    //         }
+    //     }
+    //     return $data;
+    // }
 
     public function update($data)
     {

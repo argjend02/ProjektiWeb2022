@@ -9,7 +9,6 @@
 
 <body style="background-color: rgb(246, 241, 241)">
   <?php include('header.php') ?>
-
   <div class="m">
     <div class="majt">
       <ul>
@@ -59,28 +58,38 @@
   </div>
 
   <div class="cf2">
+
     <div class="container">
-      <form class="login_form" method="post" name="form">
+      <?php
+      include("database/Kontakto.php");
+      $model = new Kontakto();
+      $model->addSubmission();
+      ?>
+
+      <form class="login_form" method="post" name="form" onsubmit="return validated();">
         <div class="emri">Name</div>
-        <input type="text" name="name2" />
+        <input type="text" name="name" required />
         <div id="name_error">Please fill up your name</div>
 
         <div class="mbiemri">Surname</div>
-        <input required type="text" name="surname" />
+        <input required type="text" name="surname" required />
         <div id="surname_error">Please fill up your surname</div>
 
         <div class="font">Email or Phone</div>
-        <input autocomplete="off" type="email" name="email" />
+        <input autocomplete="off" type="email" name="email" required />
         <div id="email_error">Please fill up your Email or Phone</div>
 
         <div class="font2">Please type your request</div>
-        <input type="textbox" name="password" style="height: 80px" />
+        <input type="textbox" name="request" style="height: 80px" required />
         <div id="pass_error">Please fill up your request</div>
+        <button type="submit" onclick="validated()" name="button">Submit</button>
 
         <h3 id="success_message" style="display: none; color: green">
           Your request is approved!
         </h3>
-        <button type="button" onclick="validated()">Submit</button>
+
+
+
       </form>
     </div>
   </div>

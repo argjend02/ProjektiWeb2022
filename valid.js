@@ -2,9 +2,10 @@
 // Validimi tek contact us
 
 var email = document.forms["form"]["email"];
-var password = document.forms["form"]["password"];
-var name2 = document.forms["form"]["name2"];
+var password = document.forms["form"]["request"];
+var name2 = document.forms["form"]["name"];
 var surname = document.forms["form"]["surname"];
+
 
 var email_error = document.getElementById("email_error");
 var pass_error = document.getElementById("pass_error");
@@ -14,12 +15,13 @@ var surname_error = document.getElementById("surname_error");
 var success_message = document.getElementById("success_message");
 
 email.addEventListener("textInput", email_Verify);
-password.addEventListener("textInput", pass_Verify);
+password.addEventListener("textInput", req_Verify);
 name2.addEventListener("textInput", name_Verify);
 surname.addEventListener("textInput", surname_Verify);
 
+
 function validated() {
-  if (name2.value.length < 1) {
+  if (name2.value.length < 2) {
     name2.style.border = "1px solid red";
     name_error.style.display = "block";
     name2.focus();
@@ -27,7 +29,7 @@ function validated() {
     return false;
   }
 
-  if (surname.value.length < 1) {
+  if (surname.value.length < 2) {
     surname.style.border = "1px solid red";
     surname_error.style.display = "block";
     surname.focus();
@@ -51,11 +53,11 @@ function validated() {
   }
 
   email_Verify();
-  pass_Verify();
+  req_Verify();
   name_Verify();
   surname_Verify();
 
-  if (email_Verify() && pass_Verify() && name_Verify() && surname_Verify()) {
+  if (email_Verify() && req_Verify() && name_Verify() && surname_Verify()) {
     success_message.style.display = "block";
   } else {
     success_message.style.display = "none";
@@ -69,7 +71,7 @@ function email_Verify() {
   }
   return false;
 }
-function pass_Verify() {
+function req_Verify() {
   if (password.value.length >= 5) {
     password.style.border = "1px solid silver";
     pass_error.style.display = "none";
