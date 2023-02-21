@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="background-color: #CAE4DB;">
+
     <?php
     include 'database/product.php';
     $model = new Product();

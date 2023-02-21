@@ -6,11 +6,11 @@
   <title>About us</title>
 </head>
 
-<body style="background-color: rgb(159, 183, 201)">
+<body style="background-color: #feb300">
   <?php include('header.php') ?>
   <div class="main">
     <div class="kutia1">
-      <img style="width: 100%; height: 500px" src="fotot/main3.jpeg" alt="" />
+      <img style="width: 100%; height: 100%" src="fotot/main3.jpeg" alt="" />
     </div>
     <div class="kutia2">
       <p>
