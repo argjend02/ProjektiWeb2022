@@ -66,7 +66,7 @@
       $model->addSubmission();
       ?>
 
-      <form class="login_form" method="post" name="form" onsubmit="return validated();">
+      <form class="contact_form" method="post" name="form" onsubmit="return validated();">
         <div class="emri">Name</div>
         <input type="text" name="name" required />
         <div id="name_error">Please fill up your name</div>
@@ -80,7 +80,8 @@
         <div id="email_error">Please fill up your Email or Phone</div>
 
         <div class="font2">Please type your request</div>
-        <input type="textbox" name="request" style="height: 80px" required />
+        <!-- <input type="textbox" name="request" required style="height:auto" /> -->
+        <textarea id="description" style="height:100px; width:350px;resize: none;" name="request" required></textarea>
         <div id="pass_error">Please fill up your request</div>
         <button type="submit" onclick="validated()" name="button">Submit</button>
 

@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" style="max-height:100px;" name="description" required></textarea>
+                <textarea id="description" style="height:50px; resize: none;" name="description" required></textarea>
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>

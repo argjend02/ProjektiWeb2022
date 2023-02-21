@@ -108,6 +108,7 @@ class User
     }
 
 
+
     public function update()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

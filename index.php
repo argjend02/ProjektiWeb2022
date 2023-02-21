@@ -6,17 +6,17 @@
   <title>Tech Shop</title>
 
   <link rel="stylesheet" href="style.css" />
-  <!-- <style>
-    .slider2 {
+  <style>
+    /* .slider2 {
       width: 100%;
-      height: 250px;
+      height: 300px;
       overflow: hidden;
     }
 
     .foto2 {
       display: flex;
       width: 200%;
-      animation: slide 7s linear infinite;
+      animation: slide 15s linear infinite;
     }
 
     .foto2 img {
@@ -31,8 +31,8 @@
       100% {
         transform: translateX(-100%);
       }
-    }
-  </style> -->
+    } */
+  </style>
 
 </head>
 <?php include "header.php"; ?>
@@ -54,12 +54,12 @@
   <main>
     <!-- <div class="slider2">
       <div class="foto2">
-        <img src="ps555.jpg" alt="" />
-        <img src="nintendo.jpeg" alt="" />
-        <img src="laptoppp.jpeg" alt="" />
-        <img src="ps555.jpg" alt="" />
-        <img src="nintendo.jpeg" alt="" />
-        <img src="ps555.jpg" alt="" />
+        <img src="playstation.png" alt="" />
+        <img src="watch.png" alt="" />
+        <img src="sony.png" alt="" />
+        <img src="playstation.png" alt="" />
+        <img src="watch.png" alt="" />
+        <img src="sony.png" alt="" />
       </div>
     </div> -->
     <div class="slider">
