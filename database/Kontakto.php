@@ -1,4 +1,7 @@
 <?php
+
+
+
 class Kontakto
 {
 
@@ -7,6 +10,7 @@ class Kontakto
     private $password;
     private $database = 'ecommerce_db';
     private $conn;
+
 
     public function __construct()
     {
@@ -54,8 +58,6 @@ class Kontakto
             echo ('Failed to add submission');
         }
     }
-
-
 
 
 

@@ -2,30 +2,76 @@
 <html>
 
 <head>
+
+    <?php include 'header.php';
+    ?>
     <meta charset="UTF-8">
     <title>Product Dashboard</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
         table {
+
+
+
             border-collapse: collapse;
             width: 100%;
-        }
-
-        th,
-        td {
+            font-family: sans-serif;
+            font-size: 14px;
             text-align: left;
-            padding: 8px;
+            color: #444;
+
         }
 
         th {
-            background-color: #007bff;
-            color: white;
+            background-color: #236D59;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 10px;
+            border: 1px solid black;
+            color: #fff;
+
+
+        }
+
+
+
+        td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        td:hover {
+            font-size: larger;
         }
 
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        tr:hover {
+            background-color: #ACDFD2;
+        }
+
+        /* column-specific styling */
+        td:nth-child(1) {
+            width: 30%;
+        }
+
+        td:nth-child(2) {
+            width: 20%;
+        }
+
+        td:nth-child(3) {
+            width: 25%;
+        }
+
+        td:nth-child(4) {
+            width: 25%;
+        }
     </style>
+
+
 </head>
 
 <body>
@@ -65,7 +111,8 @@
 
 </html>
 
-
+<?php include 'footer.php';
+?>
 </body>
 
 </html>

@@ -1018,3 +1018,12 @@ select option:hover{
 select option:checked{
   box-shadow: 0 0 10px 100px #595959 inset;
 }
+
+
+
+.tabelakontakti{
+  background-color: black;
+  color: #15142c;
+}
+
+
