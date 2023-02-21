@@ -92,13 +92,13 @@ class User
 
     public function getLoggedInUser()
     {
-        $user = json_decode($_COOKIE['user']);
-        if (!isset($_COOKIE['user'])) {
+        $user = isset($_COOKIE['user']) ? json_decode($_COOKIE['user']) : null;
+        if (!$user) {
             echo "<script>alert('You are not authorized to perform this action')</script>";
-            return;
+            return null;
         }
         $data = null;
-        $query = "SELECT * FROM users WHERE id = '$user->id'";
+        $query = "SELECT * FROM users WHERE id = '{$user->id}'";
         if ($sql = $this->conn->query($query)) {
             while ($row = $sql->fetch_assoc()) {
                 $data = $row;
@@ -106,6 +106,7 @@ class User
         }
         return $data;
     }
+
 
     public function update()
     {
