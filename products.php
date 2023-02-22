@@ -4,6 +4,12 @@
     <title>Product Page</title>
     <link rel="stylesheet" href="file.css">
     <link rel="stylesheet" href="style.css" />
+    <style>
+        * {
+            text-decoration: none;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -26,9 +32,12 @@
         include('database/product.php');
         $model = new Product();
         $products = $model->getProducts();
-        foreach ($products as $product): ?>
 
+        foreach ($products as $product): ?>
             <div class="card1">
+
+
+
                 <div class="product-image">
                     <img src="uploads/<?php echo $product['image']; ?>" alt="">
                 </div>
@@ -45,8 +54,11 @@
                 </div>
 
                 <div class="btn1">
-                    <button type="button">Add to card</button>
+                    <button type="button"><a
+                            href="buy.php?product=<?= $product['id']; ?>&user=<?= $product['user_id']; ?>">View
+                            Product</a></button>
                 </div>
+                </a>
             </div>
 
         <?php endforeach; ?>

@@ -128,5 +128,29 @@ class User
             echo "<script>alert('Updating information is not successful')</script>";
         }
     }
+
+    // public function getUserId($email)
+// {
+//     $query = "SELECT id FROM users WHERE email = '$email'";
+//     $result = $this->conn->query($query);
+//     if ($result && $result->num_rows > 0) {
+//         $row = $result->fetch_assoc();
+//         return $row['id'];
+//     } else {
+//         return null;
+//     }
+// }
+
+    public function getUserId($id)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM products WHERE id = ?");
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
+
+
 }
 ?>
