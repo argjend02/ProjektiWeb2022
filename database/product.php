@@ -64,7 +64,7 @@ class Product
             $uploadOk = false;
         }
 
-        // Check if $uploadOk is set to 0 by an error
+
         if (!$uploadOk) {
             echo "<script>alert('Sorry, your file was not uploaded.</script>";
             // if everything is ok, try to upload file
@@ -126,12 +126,6 @@ class Product
             return false;
         }
     }
-
-
-
-
-
-
 
     public function getIdActive($id)
     {

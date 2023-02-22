@@ -40,7 +40,11 @@ class User
             }
             $query = "INSERT INTO users(name, surname, birthdate, email, password) VALUES ('$name','$surname', '$birthdate', '$email', '$password')";
             if ($this->conn->query($query)) {
-                setcookie('user', json_encode($userData), time() + (86400 * 30), "/");
+                $newUserId = mysqli_insert_id($this->conn);
+                $newUserQuery = "SELECT * FROM users WHERE id = '$newUserId'";
+                $newUser = $this->conn->query($newUserQuery);
+                $newUserData = mysqli_fetch_assoc($newUser);
+                setcookie('user', json_encode($newUserData), time() + (86400 * 30), "/");
                 echo "<script>window.location.href = 'index.php';</script>";
             } else {
                 echo "<script>alert('Registration failed. Please try again.')</script>";
