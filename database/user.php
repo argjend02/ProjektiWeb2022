@@ -129,7 +129,7 @@ class User
         }
     }
 
-// public function getUserId($email)
+    // public function getUserId($email)
 // {
 //     $query = "SELECT id FROM users WHERE email = '$email'";
 //     $result = $this->conn->query($query);
@@ -140,6 +140,15 @@ class User
 //         return null;
 //     }
 // }
+
+    public function getUserId($id)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM products WHERE id = ?");
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 
 
 

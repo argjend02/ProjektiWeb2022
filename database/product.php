@@ -128,13 +128,21 @@ class Product
     }
 
 
+
+
+
+
+
     public function getIdActive($id)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM products WHERE id = :id");
-        $stmt->bindParam(':id', $id);
+        $query = "SELECT p.*, u.name AS user_name FROM products p
+                  INNER JOIN users u ON p.user_id = u.id
+                  WHERE p.id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $id);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
 }
+
 ?>

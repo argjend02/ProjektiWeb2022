@@ -7,7 +7,7 @@
     <style>
         * {
             text-decoration: none;
-            color: black
+
         }
     </style>
 </head>
@@ -32,29 +32,32 @@
         include('database/product.php');
         $model = new Product();
         $products = $model->getProducts();
-        // include_once('buy.php');
+
         foreach ($products as $product): ?>
             <div class="card1">
-                <a href="buy.php?product=<?= $product['id']; ?>">
 
-                    <div class="product-image">
-                        <img src="uploads/<?php echo $product['image']; ?>" alt="">
-                    </div>
-                    <div class="product-info">
-                        <h4>
-                            <?php echo $product['name']; ?>
-                        </h4>
-                        <h4>
-                            <?php echo $product['description']; ?>
-                        </h4>
-                        <h4>
-                            <?php echo $product['price']; ?>$
-                        </h4>
-                    </div>
 
-                    <div class="btn1">
-                        <button type="button">buy now</button>
-                    </div>
+
+                <div class="product-image">
+                    <img src="uploads/<?php echo $product['image']; ?>" alt="">
+                </div>
+                <div class="product-info">
+                    <h4>
+                        <?php echo $product['name']; ?>
+                    </h4>
+                    <h4>
+                        <?php echo $product['description']; ?>
+                    </h4>
+                    <h4>
+                        <?php echo $product['price']; ?>$
+                    </h4>
+                </div>
+
+                <div class="btn1">
+                    <button type="button"><a
+                            href="buy.php?product=<?= $product['id']; ?>&user=<?= $product['user_id']; ?>">View
+                            Product</a></button>
+                </div>
                 </a>
             </div>
 
