@@ -4,6 +4,12 @@
     <title>Product Page</title>
     <link rel="stylesheet" href="file.css">
     <link rel="stylesheet" href="style.css" />
+    <style>
+        * {
+            text-decoration: none;
+            color: black
+        }
+    </style>
 </head>
 
 <body>
@@ -26,27 +32,30 @@
         include('database/product.php');
         $model = new Product();
         $products = $model->getProducts();
+        // include_once('buy.php');
         foreach ($products as $product): ?>
-
             <div class="card1">
-                <div class="product-image">
-                    <img src="uploads/<?php echo $product['image']; ?>" alt="">
-                </div>
-                <div class="product-info">
-                    <h4>
-                        <?php echo $product['name']; ?>
-                    </h4>
-                    <h4>
-                        <?php echo $product['description']; ?>
-                    </h4>
-                    <h4>
-                        <?php echo $product['price']; ?>$
-                    </h4>
-                </div>
+                <a href="buy.php?product=<?= $product['id']; ?>">
 
-                <div class="btn1">
-                    <button type="button">Add to card</button>
-                </div>
+                    <div class="product-image">
+                        <img src="uploads/<?php echo $product['image']; ?>" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h4>
+                            <?php echo $product['name']; ?>
+                        </h4>
+                        <h4>
+                            <?php echo $product['description']; ?>
+                        </h4>
+                        <h4>
+                            <?php echo $product['price']; ?>$
+                        </h4>
+                    </div>
+
+                    <div class="btn1">
+                        <button type="button">buy now</button>
+                    </div>
+                </a>
             </div>
 
         <?php endforeach; ?>

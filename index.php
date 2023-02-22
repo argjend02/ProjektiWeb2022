@@ -45,7 +45,7 @@
         <li><a href="products.php">All Categories</a></li>
         <li><a href="#">White Tech</a></li>
         <li><a href="#">TV</a></li>
-        <li><a href="#">Maci</a></li>
+        <li><a href="#">Laptops</a></li>
         <li><a href="#">Consoles</a></li>
         <li><a href="#">Smartphones</a></li>
       </ul>

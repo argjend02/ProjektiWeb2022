@@ -60,6 +60,7 @@ body{
 .container1 .card1 .product-image img{
 	width: 100%;
 	transition: 0.4s;
+	max-height: 173px;
 }
 .container1 .card1 .product-image img:hover{
 	transform: scale(1.1);

@@ -101,19 +101,19 @@ class Product
         }
     }
 
-    // public function edit($id)
-    // {
+    public function edit($id)
+    {
 
-    //     $data = null;
+        $data = null;
 
-    //     $query = "SELECT * FROM users WHERE id = '$id'";
-    //     if ($sql = $this->conn->query($query)) {
-    //         while ($row = $sql->fetch_assoc()) {
-    //             $data = $row;
-    //         }
-    //     }
-    //     return $data;
-    // }
+        $query = "SELECT * FROM users WHERE id = '$id'";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = $sql->fetch_assoc()) {
+                $data = $row;
+            }
+        }
+        return $data;
+    }
 
     public function update($data)
     {
@@ -126,5 +126,15 @@ class Product
             return false;
         }
     }
+
+
+    public function getIdActive($id)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM products WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 }
 ?>
