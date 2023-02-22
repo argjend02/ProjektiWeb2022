@@ -692,7 +692,7 @@ height: 100%;
 .buttons {
   position: absolute;
 
-  bottom: 10px;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1023,4 +1023,9 @@ select option:checked{
   color: #15142c;
 }
 
+
+.middlediv{
+  background-color: black;
+  height: 100%;
+}
 
