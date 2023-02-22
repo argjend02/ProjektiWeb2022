@@ -42,6 +42,11 @@
     button:hover {
       background-color: #a32a34 !important;
     }
+
+    h2 {
+      margin-top: 20px;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -54,6 +59,8 @@
   $model->delete();
   ?>
   <table>
+
+    <caption style="font-size:30px">Table for deleting users</caption>
     <thead>
       <tr>
         <th>Name</th>
@@ -89,8 +96,56 @@
         </tr>
       <?php endforeach; ?>
 
+
+
+
     </tbody>
   </table>
+
+  <?php
+  include("database/Kontakto.php");
+  $model = new Kontakto();
+  $result = $model->getSubmission();
+  $model->delete();
+  ?>
+
+  <table style="margin-top:100px">
+    <caption style="font-size:30px">Table for deleting requests</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Description</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($result as $contact): ?>
+        <tr>
+          <td>
+            <?php echo $contact['name'] ?>
+          </td>
+          <td>
+            <?php echo $contact['surname'] ?>
+          </td>
+          <td>
+            <?php echo $contact['email'] ?>
+          </td>
+          <td>
+            <?php echo $contact['request'] ?>
+          </td>
+          <td>
+            <form method="post" action="#">
+              <input type="hidden" name="id" value="<?php echo $contact['id']; ?>" id="">
+              <button type="submit" class="button">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+
 
   <?php include('footer.php') ?>
 

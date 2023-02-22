@@ -58,6 +58,20 @@ class Kontakto
             echo ('Failed to add submission');
         }
     }
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return;
+        }
+
+        $id = $_POST['id'];
+        $query = "DELETE FROM contact_form_submissions where id = '$id'";
+        if ($this->conn->query($query)) {
+            header("Location: admin.php");
+        } else {
+            echo "<script>alert('User deletion unsucessful')</script>";
+        }
+    }
 
 
 
