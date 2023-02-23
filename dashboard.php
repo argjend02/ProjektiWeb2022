@@ -23,12 +23,18 @@
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="name">Price:</label>
+                <label for="price">Price:</label>
                 <input type="number" id="price" name="price" min="0" required>
             </div>
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" style="height:50px; resize: none;" name="description" required></textarea>
+                <label for="description">Category:</label>
+                <select id="description" name="description" required>
+                    <option value="">Select a category</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="White Tech">White Tech</option>
+                    <option value="Console">Console</option>
+                    <option value="Smartphone">Smartphone</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="image">Image:</label>
@@ -37,6 +43,7 @@
             <button type="submit">Post Product</button>
         </form>
     </div>
+
     <?php include 'footer.php';
     ?>
 </body>
