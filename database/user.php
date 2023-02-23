@@ -94,6 +94,8 @@ class User
         }
     }
 
+
+
     public function getLoggedInUser()
     {
         $user = isset($_COOKIE['user']) ? json_decode($_COOKIE['user']) : null;

@@ -101,8 +101,10 @@
         margin-right: 20px;
     }
 </style>
+
 <?php
 include('header.php');
+
 include_once('database/product.php');
 include_once('database/user.php');
 
@@ -122,7 +124,8 @@ if (isset($_GET['product']) && isset($_GET['user'])) {
         );
         ?>
 
-        <body style="font-family: Arial, Helvetica, sans-serif;">
+        <body>
+
             <div class="product-container">
                 <div class="product-image">
                     <img src="uploads/<?php echo $productData['image']; ?>" alt="Product Name" class="small-image">

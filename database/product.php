@@ -132,6 +132,7 @@ class Product
         $query = "SELECT p.*, u.name AS user_name FROM products p
                   INNER JOIN users u ON p.user_id = u.id
                   WHERE p.id = ?";
+
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $id);
         $stmt->execute();
