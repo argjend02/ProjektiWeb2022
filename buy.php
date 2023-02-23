@@ -93,6 +93,19 @@
         align-items: center;
     }
 
+    .iconsBuy img:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
+    }
+
+    .iconsBuy img:hover i {
+        color: #fff;
+    }
+
+    .iconsBuy img:hover:after {
+        transform: translate(0) scale(1.2);
+    }
+
 
 
     .iconsBuy img {
@@ -159,7 +172,7 @@ if (isset($_GET['product']) && isset($_GET['user'])) {
             </div>
         </body>
 
-        <?php
+    <?php
     }
 }
 include('footer.php');
