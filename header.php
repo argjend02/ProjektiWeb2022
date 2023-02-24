@@ -21,6 +21,8 @@
                         <option value=''>Select an option</option>
                         <option value='dashboard.php'>Post a product</option>
                         <option value='myInfo.php'><a>User info</a></option>
+                        <option value='myProducts.php'><a>My products</a></option>
+
                         <?php
                         $user = json_decode($_COOKIE["user"]);
                         if ($user->isAdmin):

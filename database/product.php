@@ -90,30 +90,34 @@ class Product
         return $products;
     }
 
-    public function delete($id)
+    public function delete()
     {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return;
+        }
 
-        $query = "DELETE FROM users where id = '$id'";
-        if ($sql = $this->conn->query($query)) {
+        $id = $_POST['id'];
+        $query = "DELETE FROM products where id = '$id'";
+        if ($this->conn->query($query)) {
             return true;
         } else {
             return false;
         }
     }
 
-    public function edit($id)
-    {
+    // public function edit($id)
+    // {
 
-        $data = null;
+    //     $data = null;
 
-        $query = "SELECT * FROM users WHERE id = '$id'";
-        if ($sql = $this->conn->query($query)) {
-            while ($row = $sql->fetch_assoc()) {
-                $data = $row;
-            }
-        }
-        return $data;
-    }
+    //     $query = "SELECT * FROM users WHERE id = '$id'";
+    //     if ($sql = $this->conn->query($query)) {
+    //         while ($row = $sql->fetch_assoc($sql)) {
+    //             $data = $row;
+    //         }
+    //     }
+    //     return $data;
+    // }
 
     public function update($data)
     {
@@ -138,6 +142,19 @@ class Product
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getProductByUserId($userId)
+    {
+        $query = "SELECT * FROM products WHERE products.user_id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $userId);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 }
+
+
 
 ?>
