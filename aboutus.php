@@ -6,7 +6,7 @@
   <title>About us</title>
 </head>
 
-<body style="background-color: #f3c351">
+<body style="background-color:#B5E8E8">
   <?php include('header.php') ?>
   <div class="main">
     <div class="kutia1">
