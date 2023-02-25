@@ -152,8 +152,69 @@ class Product
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // public function editProduct($id)
+// {
+
+
+
+    //     $query = "UPDATE products SET name='$_POST[name]', description='$_POST[description]', price='$_POST[price]',image='$_FILES[image][name]' WHERE id='$_POST[id] '";
+//     if ($this->conn->query($query)) {
+//         echo "<script>alert('Your information is updated successfully')</script>";
+//         header("Location: myProducts.php");
+//     } else {
+//         echo "<script>alert('Updating product is not successful')</script>";
+//     }
+// }
+
+
+    public function editProduct($id)
+    {
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $price = $_POST['price'];
+        $image = $_FILES['image']['name'];
+
+        if ($_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE) {
+            // A new image file is uploaded, update the image column
+            $target_dir = "uploads/";
+            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+            $uploadOk = true;
+            // Check file size and allowed file types
+            if ($_FILES["image"]["size"] > 500000 || !in_array($imageFileType, array("jpg", "jpeg", "png"))) {
+                echo "<script>alert('Sorry, only JPG, JPEG, PNG files under 500KB are allowed.')</script>";
+                $uploadOk = false;
+            }
+            if ($uploadOk) {
+                if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    echo "<script>alert('Sorry, there was an error uploading your file.')</script>";
+                    $uploadOk = false;
+                }
+            }
+
+            if ($uploadOk) {
+                $query = "UPDATE products SET name='$name', description='$description', price='$price', image='$image' WHERE id='$_POST[id]'";
+            }
+        } else {
+            // No new image file is uploaded, do not update the image column
+            $query = "UPDATE products SET name='$name', description='$description', price='$price' WHERE id='$_POST[id]'";
+        }
+
+        if ($this->conn->query($query)) {
+            echo "<script>alert('Your product has been updated successfully')</script>";
+            echo "<script>window.location.replace('myProducts.php')</script>";
+        } else {
+            echo "<script>alert('Updating product failed')</script>";
+        }
+    }
+
+
 
 }
+
+
+
 
 
 

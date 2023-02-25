@@ -50,6 +50,10 @@
         letter-spacing: 2px;
         color: #555;
     }
+
+    form {
+        display: inline-block;
+    }
 </style>
 
 
@@ -64,49 +68,51 @@ $username = $user->name;
 
 
 
+
 include 'header.php';
-
 ?>
+
 <table style="margin-top:100px">
-
     <thead>
-
         <tr>
             <th>Name of the product</th>
             <th>Price</th>
             <th>Category</th>
             <th>Posted by</th>
-            <th>Delete</th>
-
+            <th>Delete / Edit</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($result as $products):
-            ?>
+        <?php foreach ($result as $product): ?>
             <tr>
                 <td>
-                    <?php echo $products['name'] ?>
+                    <?php echo $product['name'] ?>
                 </td>
                 <td>
-                    <?php echo $products['price'] ?>
+                    <?php echo $product['price'] ?>
                 </td>
                 <td>
-                    <?php echo $products['description'] ?>
+                    <?php echo $product['description'] ?>
                 </td>
                 <td>
                     <?php echo $username ?>
                 </td>
                 <td>
                     <form method="post" action="#">
-                        <input type="hidden" name="id" value="<?php echo $products['id']; ?>" id="">
-                        <button type="submit" class="button">Delete</button>
+                        <input type="hidden" name="id" value="<?php echo $product['id']; ?>" id="">
+                        <button type="submit" name="delete" class="button" style="">Delete</button>
+                    </form>
+                    <form method="get" action="editProducts.php">
+                        <input type="hidden" name="id" value="<?php echo $product['id']; ?>" id="">
+                        <button style="width:70px;" type="submit" name="edit" class="button">Edit</button>
                     </form>
                 </td>
+
             </tr>
         <?php endforeach; ?>
-
     </tbody>
 </table>
+
 <?php include 'footer.php'; ?>
 
 </html>
