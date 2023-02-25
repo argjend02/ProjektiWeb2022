@@ -20,7 +20,7 @@
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -36,7 +36,7 @@
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 10px;
             box-sizing: border-box;
             margin-bottom: 20px;
             font-size: 16px;
@@ -47,13 +47,14 @@
             color: #fff;
             padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 16px;
         }
 
         .edit-user>input[type="submit"]:hover {
             background-color: #45a049;
+
         }
     </style>
 </head>

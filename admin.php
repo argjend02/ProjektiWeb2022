@@ -15,13 +15,16 @@
       width: 90%;
       margin-left: 75px;
       margin-top: 50px;
+      background-color: white;
+
     }
 
     th,
     td {
       text-align: center;
       padding: 8px;
-      border: 1px solid #ddd;
+      border: 2px solid #ddd;
+
     }
 
     th {
@@ -30,16 +33,25 @@
       font-weight: bold;
     }
 
-    button {
+    td:hover {
+      background-color: whitesmoke;
+    }
+
+    th:hover {
+      background-color: #C2c8c8;
+    }
+
+
+    .buttonD {
       padding: 5px 15px;
       border-color: #df4759;
-      border-radius: 5px;
+      border-radius: 20px;
       color: white;
       background-color: #df4759;
       cursor: pointer;
     }
 
-    button:hover {
+    .buttonD:hover {
       background-color: #a32a34 !important;
     }
 
@@ -60,7 +72,7 @@
   ?>
   <table>
 
-    <caption style="font-size:30px">Table for deleting users</caption>
+    <caption style="font-size:30px">Table of all the users</caption>
     <thead>
       <tr>
         <th>Name</th>
@@ -89,7 +101,7 @@
             <?php if (!$user['isAdmin']): ?>
               <form method="post" action="#">
                 <input type="hidden" name="id" value="<?php echo $user['id']; ?>" id="">
-                <button type="submit" class="button">Delete</button>
+                <button type="submit" class="buttonD">Delete</button>
               </form>
             <?php endif; ?>
           </td>
@@ -110,7 +122,7 @@
   ?>
 
   <table style="margin-top:100px">
-    <caption style="font-size:30px">Table for deleting requests</caption>
+    <caption style="font-size:30px">Table of all the requests</caption>
     <thead>
       <tr>
         <th>Name</th>
@@ -138,7 +150,7 @@
           <td>
             <form method="post" action="#">
               <input type="hidden" name="id" value="<?php echo $contact['id']; ?>" id="">
-              <button type="submit" class="button">Delete</button>
+              <button type="submit" class="buttonD">Delete</button>
             </form>
           </td>
         </tr>
