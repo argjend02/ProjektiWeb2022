@@ -5,7 +5,7 @@
   <meta name="viewport" content="width-device, initial-scale = 1.0">
   <title>Tech Shop</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="style.css?version=51">
   <style>
     .slider2 {
       position: relative;
