@@ -7,31 +7,45 @@
 
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* .slider2 {
+    .slider2 {
+      position: relative;
       width: 100%;
-      height: 300px;
+      height: 320px;
+
+      /* set the aspect ratio of the slider */
       overflow: hidden;
+      font-size: 0;
+      /* remove the white space between the images */
     }
 
-    .foto2 {
-      display: flex;
-      width: 200%;
-      animation: slide 15s linear infinite;
+    #foto2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400%;
+      /* set the width to be 4 times the slider width */
+      height: 320px;
+      animation: slider2 20s linear infinite;
+      /* set the animation properties */
     }
 
-    .foto2 img {
+    #slid2 {
       width: 25%;
+      /* set the width of each image in the slider */
+      height: 100%;
+      float: left;
     }
 
-    @keyframes slide {
+    @keyframes slider2 {
       0% {
-        transform: translateX(0%);
+        transform: translateX(0);
       }
 
       100% {
-        transform: translateX(-100%);
+        transform: translateX(-75%);
+        /* move the slider to the left by 75% of its width */
       }
-    } */
+    }
   </style>
 
 </head>
@@ -62,12 +76,21 @@
         <img src="sony.png" alt="" />
       </div>
     </div> -->
+
+
+    <div class="slider2">
+      <div id="foto2">
+        <img id="slid2" src="fotot/applewatch.jpeg" /><img id="slid2" src="fotot/applewatch.jpeg" /><img id="slid2"
+          src="fotot/applewatch.jpeg" /><img id="slid2" src="fotot/applewatch.jpeg" />
+      </div>
+    </div>
     <div class="slider">
       <div class="foto">
         <img id="photo" src="fotot/mac8.jpeg" alt="" />
         <img id="photo" src="fotot/pht3.jpeg" alt="" />
         <img id="photo" src="fotot/ph5.jpeg" alt="" />
         <img id="photo" src="fotot/pht7.jpeg" alt="" />
+        <img id="slid2" src="fotot/applewatch.jpeg" />
       </div>
     </div>
 
@@ -81,8 +104,12 @@
     </div>
 
 
-  </main>
 
+    <div>
+
+    </div>
+
+  </main>
 
   <!-- <main>
     <div class="slider">
@@ -100,6 +127,7 @@
       </div>
     </div>
   </main> -->
+
 
 
 
