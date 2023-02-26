@@ -10,7 +10,7 @@
     .slider2 {
       position: relative;
       width: 100%;
-      height: 320px;
+      height: 303px;
 
       /* set the aspect ratio of the slider */
       overflow: hidden;
@@ -24,7 +24,7 @@
       left: 0;
       width: 400%;
       /* set the width to be 4 times the slider width */
-      height: 320px;
+      height: 303px;
       animation: slider2 20s linear infinite;
       /* set the animation properties */
     }
