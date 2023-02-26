@@ -28,19 +28,35 @@
         color: #333;
     }
 
-    button {
+    .button {
         padding: 8px 15px;
         border: none;
         border-radius: 5px;
         color: white;
-        background-color: #df4759;
+        background-color: red;
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
     }
 
-    button:hover {
-        background-color: #a32a34;
+    .button1 {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #57ad5f;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
     }
+
+    .button1:hover {
+        background-color: green;
+    }
+
+    .button:hover {
+        background-color: #522a2f;
+    }
+
+
 
     h2 {
         margin-top: 20px;
@@ -100,11 +116,11 @@ include 'header.php';
                 <td>
                     <form method="post" action="#">
                         <input type="hidden" name="id" value="<?php echo $product['id']; ?>" id="">
-                        <button type="submit" name="delete" class="button" style="">Delete</button>
+                        <button class="button" type="submit" name="delete" class="button" style="">Delete</button>
                     </form>
                     <form method="get" action="editProducts.php">
                         <input type="hidden" name="id" value="<?php echo $product['id']; ?>" id="">
-                        <button style="width:70px;" type="submit" name="edit" class="button">Edit</button>
+                        <button class="button1" style="width:70px;" type="submit" name="edit" class="button">Edit</button>
                     </form>
                 </td>
 

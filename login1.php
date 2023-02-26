@@ -21,7 +21,7 @@
       $model = new User();
       $model->loginOrRegister();
       ?>
-      <form method="post" id="form">
+      <form method="post" id="form" autocomplete="off">
         <div class="input-group">
           <div class="input-field" id="nameField">
             <img id="foto" src="fotot/user.png " style="width: 30px" />

@@ -17,7 +17,7 @@
     <?php include 'header.php';
     ?>
     <div class="dashboard">
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="#" method="post" enctype="multipart/form-data" autocomplete="off">
             <div class="form-group">
                 <label for="name">Name of the product:</label>
                 <input type="text" id="name" name="name" required>
@@ -34,6 +34,8 @@
                     <option value="White Tech">White Tech</option>
                     <option value="Console">Console</option>
                     <option value="Smartphone">Smartphone</option>
+                    <option value="TV">TV</option>
+
                 </select>
             </div>
             <div class="form-group">

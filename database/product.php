@@ -105,20 +105,6 @@ class Product
         }
     }
 
-    // public function edit($id)
-    // {
-
-    //     $data = null;
-
-    //     $query = "SELECT * FROM users WHERE id = '$id'";
-    //     if ($sql = $this->conn->query($query)) {
-    //         while ($row = $sql->fetch_assoc($sql)) {
-    //             $data = $row;
-    //         }
-    //     }
-    //     return $data;
-    // }
-
     public function update($data)
     {
 
@@ -151,21 +137,6 @@ class Product
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    // public function editProduct($id)
-// {
-
-
-
-    //     $query = "UPDATE products SET name='$_POST[name]', description='$_POST[description]', price='$_POST[price]',image='$_FILES[image][name]' WHERE id='$_POST[id] '";
-//     if ($this->conn->query($query)) {
-//         echo "<script>alert('Your information is updated successfully')</script>";
-//         header("Location: myProducts.php");
-//     } else {
-//         echo "<script>alert('Updating product is not successful')</script>";
-//     }
-// }
-
 
     public function editProduct($id)
     {

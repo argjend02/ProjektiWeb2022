@@ -99,6 +99,10 @@ include('header.php');
                 <option value="Smartphone" <?php if ($product['description'] === 'Smartphone')
                     echo ' selected'; ?>>
                     Smartphone</option>
+                <option value="TV" <?php if ($product['description'] === 'TV')
+                    echo ' selected'; ?>>
+                    TV</option>
+
             </select>
         </div>
         <div class="form-group-edit">

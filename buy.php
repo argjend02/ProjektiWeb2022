@@ -96,6 +96,7 @@
     .iconsBuy img:hover {
         transform: translateY(-4px);
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
+        cursor: pointer;
     }
 
     .iconsBuy img:hover i {
@@ -175,7 +176,7 @@ if (isset($_GET['product']) && isset($_GET['user'])) {
             </div>
         </body>
 
-    <?php
+        <?php
     }
 }
 include('footer.php');
